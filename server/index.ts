@@ -3,8 +3,6 @@ import { Hono } from 'hono';
 import { WebSocketServer, WebSocket } from 'ws';
 import { serveStatic } from '@hono/node-server/serve-static';
 
-import { SERVER_HOSTNAME } from '../constants';
-
 export let wsConnections = 0;
 
 export const connectedClients = new Map<string, WebSocket>();
@@ -44,7 +42,7 @@ console.log(`Server is running on port ${port}`);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const wss = new WebSocketServer({ server: server as any });
-wsClient = new WebSocket(`ws://${SERVER_HOSTNAME}:${port}/ws`);
+wsClient = new WebSocket(`ws://${'127.0.0.1'}:${port}/ws`);
 
 type WsMessage =
   | { type: 'token'; value: string }

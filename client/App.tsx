@@ -4,7 +4,6 @@ import './App.css';
 import QRCode from 'react-qr-code';
 import { v4 as uuid } from 'uuid';
 import { AuthZGrant } from './components/AuthZGrant';
-import { SERVER_HOSTNAME } from '../constants';
 
 type WsServerMessage = {
   type: 'granteeConnected';
@@ -40,7 +39,7 @@ function App() {
     const token = uuid();
     // const token = '43846302-5b59-4c46-aff9-474b48f51ca2';
 
-    const newWs = new WebSocket(`ws://${SERVER_HOSTNAME}:3333/ws`);
+    const newWs = new WebSocket(`ws://${'127.0.0.1'}:3333/ws`);
     newWs.onopen = () => {
       const websocketUrl = newWs.url;
       const postUrl = newWs.url

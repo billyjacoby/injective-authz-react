@@ -1,1 +1,1 @@
-export const SERVER_HOSTNAME = '10.0.1.60';
+// export const SERVER_HOSTNAME = '10.0.1.60';

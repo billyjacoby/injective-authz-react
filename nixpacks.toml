@@ -1,0 +1,7 @@
+providers = ["...", "python"]
+
+[phases.build]
+cmds = ["echo No build !"]
+
+[start]
+cmds = ["yarn start"]
